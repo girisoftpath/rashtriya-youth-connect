@@ -13,15 +13,19 @@ import { useUser } from '@/contexts/UserContext';
 interface OTPModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  contact: string;
-  onVerified: () => void;
+  contact?: string;
+  mobileNumber?: string;
+  onVerified?: () => void;
+  onVerifySuccess?: () => void;
 }
 
 export const OTPModal: React.FC<OTPModalProps> = ({
   open,
   onOpenChange,
   contact,
+  mobileNumber,
   onVerified,
+  onVerifySuccess,
 }) => {
   const [otp, setOtp] = useState('');
   const [countdown, setCountdown] = useState(120); // 2 minutes
@@ -72,8 +76,12 @@ export const OTPModal: React.FC<OTPModalProps> = ({
         username: 'giriprathap_raju'
       };
       
-      login(mockUser);
-      onVerified();
+      if (onVerified) {
+        login(mockUser);
+        onVerified();
+      } else if (onVerifySuccess) {
+        onVerifySuccess();
+      }
     }
   };
 
@@ -100,7 +108,7 @@ export const OTPModal: React.FC<OTPModalProps> = ({
 
         <div className="space-y-6 text-center">
           <p className="text-muted-foreground">
-            We have sent an OTP to <span className="font-medium text-foreground">{contact}</span>
+            We have sent an OTP to <span className="font-medium text-foreground">{contact || mobileNumber}</span>
           </p>
           
           <p className="text-sm text-muted-foreground">

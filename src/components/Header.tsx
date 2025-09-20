@@ -3,7 +3,11 @@ import { Button } from '@/components/ui/button';
 import { useUser } from '@/contexts/UserContext';
 import { LoginModal } from './modals/LoginModal';
 import { RegisterModal } from './modals/RegisterModal';
+import { MobileRegisterModal } from './modals/MobileRegisterModal';
+import { OTPModal } from './modals/OTPModal';
 import governmentLogo from '@/assets/government-logo.png';
+import yasLogo from '@/assets/yas-logo.png';
+import mybharatLogo from '@/assets/mybharat-logo.png';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { LogOut, User } from 'lucide-react';
 import {
@@ -17,6 +21,9 @@ export const Header: React.FC = () => {
   const { user, isLoggedIn, logout } = useUser();
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showMobileRegisterModal, setShowMobileRegisterModal] = useState(false);
+  const [showOTPModal, setShowOTPModal] = useState(false);
+  const [mobileNumber, setMobileNumber] = useState('');
 
   return (
     <>
@@ -25,24 +32,38 @@ export const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Logo and Title */}
             <div className="flex items-center space-x-4">
-              <img 
-                src={governmentLogo} 
-                alt="Government of India" 
-                className="h-12 w-12 object-contain"
-              />
+              <div className="flex items-center space-x-3">
+                <img 
+                  src={governmentLogo} 
+                  alt="Government of India" 
+                  className="h-12 w-12 object-contain"
+                />
+                <img 
+                  src={yasLogo} 
+                  alt="Ministry of Youth Affairs & Sports" 
+                  className="h-12 w-auto object-contain"
+                />
+                <img 
+                  src={mybharatLogo} 
+                  alt="MY Bharat" 
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
               <div>
-                <h1 className="text-xl font-bold text-secondary">Government Portal</h1>
+                <h1 className="text-xl font-bold text-secondary">MY Bharat Portal</h1>
                 <p className="text-sm text-muted-foreground">Youth Empowerment Initiative</p>
               </div>
             </div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
-              <a href="/quizzes" className="text-foreground hover:text-primary transition-colors">Quizzes</a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-              <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <nav className="hidden md:flex items-center space-x-6">
+              <a href="#youth" className="text-foreground hover:text-primary transition-colors font-medium">Youth</a>
+              <a href="/quizzes" className="text-foreground hover:text-primary transition-colors font-medium">Quiz</a>
+              <a href="#cv-builder" className="text-foreground hover:text-primary transition-colors font-medium">CV Builder</a>
+              <a href="#experimental-learning" className="text-foreground hover:text-primary transition-colors font-medium">Experimental Learning</a>
+              <a href="#volunteer" className="text-foreground hover:text-primary transition-colors font-medium">Volunteer for Bharath</a>
+              <a href="#vbyld" className="text-foreground hover:text-primary transition-colors font-medium">VBYLD-2026</a>
+              <a href="#mega-events" className="text-foreground hover:text-primary transition-colors font-medium">Mega Events</a>
             </nav>
 
             {/* Auth Section */}
@@ -80,7 +101,7 @@ export const Header: React.FC = () => {
                   </Button>
                   <Button 
                     className="bg-gradient-primary hover:opacity-90 transition-opacity"
-                    onClick={() => setShowRegisterModal(true)}
+                    onClick={() => setShowMobileRegisterModal(true)}
                   >
                     Register
                   </Button>
@@ -96,6 +117,28 @@ export const Header: React.FC = () => {
         onOpenChange={setShowLoginModal}
         onSwitchToRegister={() => {
           setShowLoginModal(false);
+          setShowRegisterModal(true);
+        }}
+      />
+      <MobileRegisterModal 
+        open={showMobileRegisterModal} 
+        onOpenChange={setShowMobileRegisterModal}
+        onOTPSent={(mobile) => {
+          setMobileNumber(mobile);
+          setShowMobileRegisterModal(false);
+          setShowOTPModal(true);
+        }}
+        onSwitchToLogin={() => {
+          setShowMobileRegisterModal(false);
+          setShowLoginModal(true);
+        }}
+      />
+      <OTPModal 
+        open={showOTPModal} 
+        onOpenChange={setShowOTPModal}
+        mobileNumber={mobileNumber}
+        onVerifySuccess={() => {
+          setShowOTPModal(false);
           setShowRegisterModal(true);
         }}
       />

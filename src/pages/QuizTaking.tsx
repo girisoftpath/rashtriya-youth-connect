@@ -16,15 +16,203 @@ interface Question {
 const mockQuestions: Question[] = [
   {
     id: 1,
-    question: "What is the main concern regarding the use of public Wi-Fi networks?",
+    question: "A bus at the bus stop signals the intent of moving off, you will",
     options: [
-      "They are slower than private networks",
-      "They are usually not password protected",
-      "They are only accessible to tech-savvy individuals",
-      "They provide better security compared to private networks"
+      "Slow down and give way",
+      "Speed past it",
+      "Flash lights and go past the bus"
     ]
   },
-  // Add more questions as needed
+  {
+    id: 2,
+    question: "What is the best approach to managing healthy weight loss?",
+    options: [
+      "Gradual, balanced diet changes and exercise",
+      "Extreme calorie restriction",
+      "Consuming only high-protein diets",
+      "Skipping meals"
+    ]
+  },
+  {
+    id: 3,
+    question: "Bihu is the major festival of which Indian state?",
+    options: [
+      "Mizoram",
+      "Assam",
+      "Nagaland",
+      "Meghalaya"
+    ]
+  },
+  {
+    id: 4,
+    question: "Lightning strikes vertically and then spread radially outward The threat due to lightning could be from:-",
+    options: [
+      "Direct strikes only",
+      "Radial strikes only",
+      "Both Direct and radial strikes",
+      "None of the above"
+    ]
+  },
+  {
+    id: 5,
+    question: "What does regular usage of nicotine do to the brain?",
+    options: [
+      "Initially stimulates but later leads to addiction",
+      "Makes it sharper",
+      "Keeps it calm & cool",
+      "Has no harmful effect"
+    ]
+  },
+  {
+    id: 6,
+    question: "How long does AB PM-JAY cover pre-hospitalization and post-hospitalization expenses?",
+    options: [
+      "1 day pre, 7 days post",
+      "2 days pre, 10 days post",
+      "3 days pre, 15 days post",
+      "5 days pre, 20 days post"
+    ]
+  },
+  {
+    id: 7,
+    question: "National Youth Day commemorates the birth anniversary of which personality?",
+    options: [
+      "Mahatma Gandhi",
+      "Swami Vivekananda",
+      "Jawaharlal Nehru",
+      "Dr. APJ Abdul Kalam"
+    ]
+  },
+  {
+    id: 8,
+    question: "National Health Authority is a ?",
+    options: [
+      "Government Body",
+      "CSR organisation",
+      "Private entity",
+      "Semi- Government body"
+    ]
+  },
+  {
+    id: 9,
+    question: "Which city in UP is famous for the historic 'Bara Imambara' and Rumi Darwaza?",
+    options: [
+      "Kanpur",
+      "Varanasi",
+      "Lucknow",
+      "Agra"
+    ]
+  },
+  {
+    id: 10,
+    question: "According to India's Prime Minister's Ten Point Agenda on DRR, why is it important to involve women in disaster risk management?",
+    options: [
+      "Women are more technologically savvy for efficient disaster response.",
+      "Women's leadership can bring better community resilience to disasters.",
+      "Women have better risk mapping skills for understanding nature and disaster risks.",
+      "Women's involvement can strengthen international response to disasters."
+    ]
+  },
+  {
+    id: 11,
+    question: "The present-day state of Rajasthan was formed on which date?",
+    options: [
+      "01-Nov-50",
+      "26-Jan-50",
+      "01-Nov-56",
+      "15-Aug-47"
+    ]
+  },
+  {
+    id: 12,
+    question: "Which point of the Prime Minister's Ten Point Agenda emphasizes the need for global risk mapping?",
+    options: [
+      "Point 2: Risk coverage for all sectors.",
+      "Point 4: Improve global understanding of nature and disaster risks.",
+      "Point 6: Develop a network of universities for disaster-related issues.",
+      "Point 8: Build on local capacity and initiative for disaster risk reduction."
+    ]
+  },
+  {
+    id: 13,
+    question: "Which country has the highest EVs per capita?",
+    options: [
+      "China",
+      "United States",
+      "Norway",
+      "India"
+    ]
+  },
+  {
+    id: 14,
+    question: "Which of the following is a mega event promoted through MY Bharat platform?",
+    options: [
+      "Climate Action Yuva",
+      "Ek Ped Maa Ke Naam",
+      "Digital Literacy Campaign",
+      "Startup India Initiative"
+    ]
+  },
+  {
+    id: 15,
+    question: "No child shall be given in adoption to a couple unless they have at least years of stable marital relationship.",
+    options: [
+      "5 years",
+      "2 years",
+      "10 years",
+      "6 years"
+    ]
+  },
+  {
+    id: 16,
+    question: "What is the prize money for individual category in National Youth Awards?",
+    options: [
+      "50,000",
+      "100,000",
+      "200,000",
+      "500,000"
+    ]
+  },
+  {
+    id: 17,
+    question: "Which day is celebrated as National Youth Day in India?",
+    options: [
+      "12-Jan",
+      "15-Aug",
+      "02-Oct",
+      "26-Jan"
+    ]
+  },
+  {
+    id: 18,
+    question: "Goa was granted full statehood within the Indian Union in which year?",
+    options: [
+      "1965",
+      "1970",
+      "1987",
+      "2000"
+    ]
+  },
+  {
+    id: 19,
+    question: "A cheque that can only be encashed by depositing in a bank is known as",
+    options: [
+      "Demand Draft",
+      "Bearer Cheque",
+      "Account Payee Cheque",
+      "Account Deposit Cheque"
+    ]
+  },
+  {
+    id: 20,
+    question: "Which of the following is a recommended action during a wildfire?",
+    options: [
+      "Turn on sprinklers to wet the house",
+      "Start a controlled burn to clear vegetation",
+      "Drive through the fire to reach safety",
+      "Open windows to let fresh air in"
+    ]
+  }
 ];
 
 export const QuizTaking: React.FC = () => {

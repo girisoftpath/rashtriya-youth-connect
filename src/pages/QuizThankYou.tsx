@@ -52,8 +52,11 @@ export const QuizThankYou: React.FC = () => {
               </p>
             </div>
 
-            <Button className="bg-gradient-primary hover:opacity-90 transition-opacity">
-              Overview Questions
+            <Button 
+              className="bg-gradient-primary hover:opacity-90 transition-opacity"
+              onClick={() => window.location.href = '/certificate'}
+            >
+              Download Certificate
             </Button>
           </div>
 
